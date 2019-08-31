@@ -12,7 +12,7 @@ function harmelessRandsomeNote (noteText, magazineText){
     const noteArr = noteText.split(' ');
     const magArr = magazineText.split(' ');
     //use hash table to find out how many of each word 
-    let magObj = {};
+    const magObj = {};
     //access each word in the array(s)
     magArr.forEach(word => {
         //if current word not present as a property on obj, create new  property ob obj with the current word and start word at zero count 
@@ -47,7 +47,7 @@ harmelessRandsomeNote('this is a secret note for you from a secret admirer', 'pu
 // harmelessRandsomeNote('this is a secret note for you from a secret admirer', 'rico is a place of great wonder and excitement it has many secret waterfall locations that i am an admirer of you must hike quite a distance to find the secret places as they are far from populated areas but it is worth the effort a tip i have for you is to go early in the morning when it is not so hot out also note that you must wear hiking boots this is one of the best places i have ever visited')
 
 /* ========================= TIME COMPLEXITY =========================
-time complexity
+
 linear O(n) => two non-nested loops
 O(n) + O(m) => two diff variables can be used to describe the complexities for each loop (O(n + m) OR O(n))
     O(n) => loop one loops through elements of the magazine array
