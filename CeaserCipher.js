@@ -16,15 +16,15 @@ function ceasarCipher(str, num){
     for (var i = 0; i < lowerCaseStr.length; i++){
         //find current letter
         const currentLetter = lowerCaseStr[i];
+        //determine position of current letter
+        const currentIndex = alphabetArr.indexOf(currentLetter);
+        //shift current letter by number passed into algorithm
+        let newIndex = currentIndex + num;
         //if current letter is a space char, add to new string
         if(currentLetter === ' '){
             newStr += currentLetter;
             continue;
         }
-        //determine position of current letter
-        const currentIndex = alphabetArr.indexOf(currentLetter);
-        //shift current letter by number passed into algorithm
-        let newIndex = currentIndex + num;
         //handle for if index becomes greater than 25 (num of alphabet indexes)
         // or less than 0 (shifting backwards) by looping alphabet back to beginning index
         if(newIndex > 25) newIndex = newIndex - 26;
