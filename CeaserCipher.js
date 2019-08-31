@@ -38,6 +38,31 @@ function ceasarCipher(str, num){
     return newStr;
 }
 
+/* ========================= WITHOUT COMMENTS ========================= */
+
+function ceasarCipher(str, num){
+    num = num % 26;
+    const lowerCaseStr = str.toLowerCase();
+    const alphabetArr = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    let newStr = '';
+    for (var i = 0; i < lowerCaseStr.length; i++){
+        const currentLetter = lowerCaseStr[i];
+        const currentIndex = alphabetArr.indexOf(currentLetter);
+        let newIndex = currentIndex + num;
+        if(currentLetter === ' '){
+            newStr += currentLetter;
+            continue;
+        }
+        if(newIndex > 25) newIndex = newIndex - 26;
+        if(newIndex < 0) newIndex = newIndex + 26;
+        if(str[i] === str[i].toUpperCase()){
+            newStr += alphabetArr[newIndex].toUpperCase()
+        }
+        else newStr += alphabetArr[newIndex]
+    }
+    return newStr;
+}
+
 console.log(ceasarCipher('Daaimah', 1));
 
 /* ========================= TESTING ========================= */
