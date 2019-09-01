@@ -1,10 +1,10 @@
-/* ========================= CEASAR CIPHER =========================
+/* ========================= CAESAR CIPHER =========================
 Take in two parameters, a string and a number. Shift every letter in given string by the number passed in. Ability to handle negative numbers.
 
 Key Concepts: understanding forEach vs for loops uses
 */
 
-function ceasarCipher(str, num){
+function caesarCipher(str, num){
     //handle numbers < -26 || > 26
     num = num % 26;
     //lowercase entire string
